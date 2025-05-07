@@ -147,6 +147,7 @@ if(USE_HDF5)
     HDF5::HDF5
   )
 
+  find_package(zlib)
   find_package(libaec)
   find_package(Threads)
 
