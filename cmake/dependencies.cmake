@@ -123,13 +123,13 @@ if(USE_HDF5)
   # we will use a static library.  This can be toggled
   # by explicitly modifying NETCDF_FIND_SHARED_LIBS.
   ##
-  #if (MSVC)
-  #  if(NETCDF_FIND_SHARED_LIBS)
-  #    set(HDF5_USE_STATIC_LIBRARIES OFF)
-  #  else()
-  #    set(HDF5_USE_STATIC_LIBRARIES ON)
-  #  endif()
-  #endif()
+  if (MSVC)
+    if(NETCDF_FIND_SHARED_LIBS)
+      set(HDF5_USE_STATIC_LIBRARIES OFF)
+    else()
+      set(HDF5_USE_STATIC_LIBRARIES ON)
+    endif()
+  endif()
 
   #####
   # First, find the C and HL libraries.
